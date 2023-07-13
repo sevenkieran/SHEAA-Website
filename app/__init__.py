@@ -1,11 +1,12 @@
 from flask import Flask
 
 
-def create_app():
+def app():
     app = Flask(__name__)
     app.config["SECRET_KEY"] = "ahsdgfkjaghdfkj"
 
     from .views import views
+
     # from .about import about
     # from .AboutModel import AboutModel
     # from .tryGPT2 import tryGPT2
