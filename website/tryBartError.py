@@ -39,7 +39,6 @@ def tryModel():
                 int(request.form["num_parameters"]),
                 float(request.form["new_value"]),
             )
-            plot_weight_distribution(model)
 
     return render_template(
         "tryBartError.html",
@@ -69,17 +68,6 @@ def chat():
         )
     else:
         return "did not work"
-
-
-@tryBartError.route("/tryBartError/generate_graph", methods=["GET"])
-def generate_graph():
-    # Generate the graph using your graphing function
-    plot_weight_distribution(model)
-
-    return jsonify(success=True)
-
-
-# Satrant's Method
 
 
 def bartResponse(prompt, attack, sf=0.3, p=1e-4, toggle=False):
@@ -166,7 +154,6 @@ def bartResponse(prompt, attack, sf=0.3, p=1e-4, toggle=False):
     generated_text = tokenizer.decode(output.squeeze(), skip_special_tokens=True)
 
     return generated_text
-    # Decode and print the generated text
 
 
 def BartErrorInjector(input_text, num_params, new_val):
@@ -229,53 +216,6 @@ def BartErrorInjector(input_text, num_params, new_val):
     summary = tokenizer.decode(summary_ids.squeeze(), skip_special_tokens=True)
 
     # Call your graph function on the modified model
-    plot_weight_distribution(model)
 
     # Print the summary
     return str(summary)
-
-
-def plot_weight_distribution(model):
-    # Create an empty list to store the parameter values
-    parameter_values = []
-
-    # Create an empty tensor to concatenate the parameters
-    concatenated_tensor = None
-
-    # Iterate through the named parameters of the model
-    for name, param in model.named_parameters():
-        if "weight" in name:
-            # Reshape the parameter tensor to a 1D tensor
-            param_tensor = param.view(-1)
-
-            # Concatenate the parameter tensor to the existing tensor
-            if concatenated_tensor is None:
-                concatenated_tensor = param_tensor
-            else:
-                concatenated_tensor = torch.cat((concatenated_tensor, param_tensor))
-
-    # Move the concatenated tensor to the GPU
-    if torch.cuda.is_available():
-        concatenated_tensor = concatenated_tensor.cuda()
-
-    # Convert the GPU tensor to a CPU tensor (if necessary)
-    concatenated_tensor_cpu = concatenated_tensor.cpu()
-
-    # Detach the tensor from the computation graph and convert it to a NumPy array
-    parameter_values = concatenated_tensor_cpu.detach().numpy()
-
-    # Plotting the weight distribution
-    start = -10.0
-    stop = 10.0
-    step = 0.05
-    bins = [round(start + i * step, 1) for i in range(int((stop - start) / step))]
-
-    plt.hist(parameter_values, bins=bins, edgecolor="black", log=True)
-
-    plt.xlabel("Parameter Values")
-    plt.ylabel("Frequency")
-    plt.title(f"Bart Error Weight Distribution")
-    plt.savefig(
-        "D:\Documents\Innovate\SHEAA\TestWebsite\website\static\images\graph.png"
-    )  # Save the graph as an image file
-    plt.close()  # Close the figure to release resources

@@ -112,7 +112,7 @@
             var sliderValue2 = $("#slider2").val();
 
             var userHtml =
-                '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+                '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send" style="color: black; font-weight: bold;">' +
                 rawText +
                 '<span class="msg_time_send">';
 
@@ -129,7 +129,7 @@
                 url: "/tryBartSingle/get",
             }).done(function (data) {
                 var botHtml =
-                    '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
+                    '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer" style="color: black; font-weight: bold;">' +
                     data +
                     '<span class="msg_time">' +
                     "<hr>";

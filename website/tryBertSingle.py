@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template, request, jsonify
+from flask import Flask, Blueprint, render_template, request
 from transformers import BertForMaskedLM, BertTokenizer
 import torch
 from torch import nn

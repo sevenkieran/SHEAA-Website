@@ -11,7 +11,6 @@ def create_app():
     from .tryGPT2 import tryGPT2
     from .tryBert import tryBert
     from .tryRoBERTa import tryRoBERTa
-    from .tryDial import tryDial
     from .tryBertError import tryBertError
     from .tryGPT2error import tryGPT2error
     from .tryBart import tryBart
@@ -28,7 +27,6 @@ def create_app():
     app.register_blueprint(tryGPT2, url_prefix="/")
     app.register_blueprint(tryBert, url_prefix="/")
     app.register_blueprint(tryRoBERTa, url_prefix="/")
-    app.register_blueprint(tryDial, url_prefix="/")
     app.register_blueprint(tryBertError, url_prefix="/")
     app.register_blueprint(tryGPT2error, url_prefix="/")
     app.register_blueprint(tryBart, url_prefix="/")

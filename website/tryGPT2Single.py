@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template, request, jsonify
+from flask import Flask, Blueprint, render_template, request
 from transformers import GPT2LMHeadModel, GPT2Tokenizer, GPT2Config
 import torch
 from torch import nn

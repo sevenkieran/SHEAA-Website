@@ -1,4 +1,4 @@
-from flask import Flask, Blueprint, render_template, request, jsonify
+from flask import Flask, Blueprint, render_template, request
 import torch
 import torch.nn as nn
 from transformers import BertForMaskedLM, BertTokenizer
@@ -50,13 +50,6 @@ def chat():
         )
     else:
         return "did not work"
-
-    return str(BertErrorInjection(input, num_params=num_params, new_val=new_val))
-
-
-# def get_Chat_response(text, num_params=1, new_value=-1):
-#     return BertErrorInjection(num_params, new_value, text)
-
 
 def BertErrorInjection(input_text, num_params, new_val):
     # Create the BERT model and tokenizer
@@ -134,8 +127,6 @@ def BertErrorInjection(input_text, num_params, new_val):
     # return the generated word
     return predicted_token
 
-
-# Ex: BertErrorInjection(10,-2,"I want to eat a [MASK].")
 
 
 def bartResponse(prompt, attack, sf=0.3, p=1e-4):
@@ -222,4 +213,3 @@ def bartResponse(prompt, attack, sf=0.3, p=1e-4):
     generated_text = tokenizer.decode(output.squeeze(), skip_special_tokens=True)
 
     return generated_text
-    # Decode and print the generated text

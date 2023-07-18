@@ -39,9 +39,6 @@ content%}
 							</div>
 						</div>
 						<div id="messageFormeight" class="card-body msg_card_body"></div>
-						<div id="plotArea" class="card-body">
-							<img id="weightDistributionPlot" src="" alt="Weight Distribution Plot">
-						</div>
 						<!-- Input Bar -->
 						<div class="card-footer">
 							<form id="messageArea" class="input-group">
@@ -72,27 +69,9 @@ content%}
 								<span id="sliderValue2" class="slider-value">Length: {{ slider_value2 }}</span>
 							</div>
 
-							<!-- Plot area -->
-							<div id="plotArea" class="card-body" style="display: none;">
-								<img id="weightDistributionPlot" src="" alt="Weight Distribution Plot">
-							</div>
-							</form>
-							<!-- Plot area -->
-							<div id="plotArea" class="card-body">
-								{% if image_data %}
-								<img src="data:image/png;base64,{{ image_data }}" alt="Weight Distribution Plot">
-								{% endif %}
-							</div>
-
 							<!-- Plot button -->
-							<form action="{{ url_for('tryGPT2.plot') }}" method="GET">
-								<button type="submit" class="button default" style="background-color: #383b4d;">Plot
-									Weight Distribution</button>
-							</form>
-							<div id="plotArea" class="card-body">
-								<img id="weightDistributionPlot" src="{{ url_for('tryGPT2.plot') }}"
-									alt="Weight Distribution Plot">
-							</div>
+							 <!-- Add the button here -->
+							 <button type="button" id="plotButton" class="btn btn-primary">See GPT2's Weight Distribution</button>
 						</div>
 					</div>
 				</div>
@@ -112,82 +91,62 @@ content%}
 	function updateValue(value, elementId, name) {
 		document.getElementById(elementId).textContent = name + ":" + value;
 	}
-</script>
-<!-- <script>
-		// Post slider value to flask
-		function postSliderValue() {
-      		var slider = document.getElementById("sliderSend");
-      		var value = slider.value;
-			  $.ajax({
+	// Button click event handler
+	$(document).ready(function () {
+                    var imageAppended = false;
+                    $("#plotButton").on("click", function () {
+                        if(!imageAppended) {
+                        // Replace 'path/to/plot/image.png' with the actual path to your image file
+                        var imagePath = "{{ url_for('static', filename='images/gpt2_UnalteredDistribution.png') }}";
+                        // Create an <img> element and set the 'src' attribute to the image path
+                        var imageElement = $('<img>').attr('src', imagePath);
+                        // Append the image element to the card body
+                        $("#messageFormeight").append(imageElement);
+                        imageAppended = true;
+                        }
+                    });
+                });
+	$(document).ready(function () {
+
+			$("#messageArea").on("submit", function (event) {
+				var sliderValue1 = $("#slider1").val();
+				var sliderValue2 = $("#slider2").val();
+				var rawText = $("#text").val();
+
+				var userHtml =
+					'<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+					rawText +
+					'<span class="msg_time_send">';
+
+				$("#text").val("");
+				$("#messageFormeight").append(userHtml).append("<hr>");
+
+				$.ajax({
 					data: {
 						msg: rawText,
+						len: sliderValue2, // Add the slider value to the data object
+						temperature: sliderValue1
 					},
 					type: "POST",
 					url: "/tryGPT2/get",
-				})
-		}
-	 </script> -->
-<!-- Send msg -->
-<script>
-	$(document).ready(function () {
-		var isPlotVisible = false; // Variable to track the plot visibility
-
-		$("#messageArea").on("submit", function (event) {
-			var sliderValue1 = $("#slider1").val();
-			var sliderValue2 = $("#slider2").val();
-			var rawText = $("#text").val();
-
-			var userHtml =
-				'<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
-				rawText +
-				'<span class="msg_time_send">';
-
-			$("#text").val("");
-			$("#messageFormeight").append(userHtml).append("<hr>");
-
-			$.ajax({
-				data: {
-					msg: rawText,
-					len: sliderValue2, // Add the slider value to the data object
-					temperature: sliderValue1
-				},
-				type: "POST",
-				url: "/tryGPT2/get",
-				success: function (data) {
-					var botHtml =
-						'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img" width="40" /><span class="msg_time">';
-
-					$("#messageFormeight").append(botHtml + data + "</span></div></div>").append("<hr>");
-				}
-			}).done(function (data) {
-				// var botHtml =
-				// 	'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
-				// 	data +
-				// 	'<span class="msg_time">' +
-				// 	"<hr>";
-				// $("#messageFormeight").append($.parseHTML(botHtml));
-			});
-			event.preventDefault();
-		});
-		$("#plotToggle").on("change", function () {
-			isPlotVisible = $(this).is(":checked");
-
-			if (isPlotVisible) {
-				// Retrieve the weight distribution plot
-				$.ajax({
-					url: "/tryGPT2/graph",
-					type: "GET",
 					success: function (data) {
-						$("#weightDistributionPlot").attr("src", data);
-					},
-				});
-			}
+						var botHtml =
+							'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img" width="40" /><span class="msg_time">';
 
-			// Show/hide the plot area
-			$("#plotArea").toggle(isPlotVisible);
-		});
-	});
-</script>
+						$("#messageFormeight").append(botHtml + data + "</span></div></div>").append("<hr>");
+					}
+				}).done(function (data) {
+					var botHtml =
+						'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
+						data +
+						'<span class="msg_time">' +
+						"<hr>";
+					$("#messageFormeight").append($.parseHTML(botHtml));
+				});
+				event.preventDefault();
+				});
+			});
+			</script>
 
 </html>
 {% endblock %}

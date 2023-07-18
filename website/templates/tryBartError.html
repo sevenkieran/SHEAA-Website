@@ -97,71 +97,14 @@
                             <br>
                         </div>
                         <br>
-                        <div class="switch-container">
-                            <label for="toggleSwitch" style="color:black; font:inherit">Graph the Distribution</label>
-                            <label class="switch">
-                                <input type="checkbox" id="toggleSwitch">
-                                <span class="slider round"></span>
-                            </label>
-                        </div>
                         </form>
 
                     </div>
                 </div>
             </div>
-            <img src="{{ url_for('static', filename='images/graph.png') }}" alt="Image">
-        </div>
-
-
-        <!-- More info -->
-        <section id="one">
-            <div class="inner">
-                <div class="row" style="padding: 5% 5% 5% 5%">
-                    <div class="col-6 col-12-small">
-                        <h3 class="description">Sem turpis amet semper</h3>
-                        <hr class="description-hr">
-                        <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
-                            integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat commodo eu sed
-                            ante lacinia. Sapien a lorem in integer ornare praesent commodo adipiscing arcu in massa
-                            commodo lorem accumsan at odio massa ac ac. Semper adipiscing varius montes viverra nibh
-                            in adipiscing blandit tempus accumsan.</p>
-                    </div>
-                    <div class="col-6 col-12-small">
-                        <h3 class="description">Magna odio tempus commodo</h3>
-                        <hr class="description-hr">
-                        <p>In arcu accumsan arcu adipiscing accumsan orci ac. Felis id enim aliquet. Accumsan ac
-                            integer lobortis commodo ornare aliquet accumsan erat tempus amet porttitor. Ante
-                            commodo blandit adipiscing integer semper orci eget. Faucibus commodo adipiscing mi eu
-                            nullam accumsan morbi arcu ornare odio mi adipiscing nascetur lacus ac interdum morbi
-                            accumsan vis mi accumsan ac praesent.</p>
-                    </div>
-                    <!-- Break -->
-                    <div class="col-4 col-12-medium">
-                        <h3 class="description">Interdum sapien gravida</h3>
-                        <hr class="description-hr">
-                        <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
-                            integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante
-                            lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus
-                            accumsan.</p>
-                    </div>
-                    <div class="col-4 col-12-medium">
-                        <h3 class="description">Faucibus consequat lorem</h3>
-                        <hr class="description-hr">
-                        <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
-                            integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante
-                            lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus
-                            accumsan.</p>
-                    </div>
-                    <div class="col-4 col-12-medium">
-                        <h3 class="description">Accumsan montes viverra</h3>
-                        <hr class="description-hr">
-                        <p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi
-                            integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante
-                            lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus
-                            accumsan.</p>
-                    </div>
-                </div>
-            </div>
+      </div>
+     </div>
+    </div>
 </div>
 </div>
 </body>
@@ -220,7 +163,7 @@
             var switchValue = $("#toggleSwitch").is(":checked"); // Retrieve the state of the toggle switch
 
             var userHtml =
-                '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+                '<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send" style="color: black; font-weight: bold;">' +
                 rawText +
                 '<span class="msg_time_send">';
 
@@ -241,7 +184,7 @@
                 url: "/tryBartError/get",
             }).done(function (data) {
                 var botHtml =
-                    '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
+                    '<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer" style="color: black; font-weight: bold;">' +
                     data +
                     '<span class="msg_time">' +
                     "<hr>";

@@ -93,12 +93,6 @@
 							</select>
 						</div>
 						<br>
-						<!-- Plot area -->
-						<div id="plotArea" class="card-body" style="display: none;">
-							<img id="weightDistributionPlot" src="" alt="Weight Distribution Plot">
-						</div>
-						<!-- Plot button -->
-						<button type="button" id="graphButton" class="btn btn-primary">Graph</button>
 					</div>
 				</div>
 			</div>
@@ -181,31 +175,14 @@
 							$("#messageFormeight").append(botHtml + data + "</span></div></div>").append("<hr>");
 						}
 					}).done(function (data) {
-						// var botHtml =
-						// 	'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
-						// 	data +
-						// 	'<span class="msg_time">' +
-						// 	"<hr>";
-						// $("#messageFormeight").append($.parseHTML(botHtml));
+						var botHtml =
+							'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
+							data +
+							'<span class="msg_time">' +
+							"<hr>";
+						$("#messageFormeight").append($.parseHTML(botHtml));
 					});
 					event.preventDefault();
-				});
-				$("#plotToggle").on("click", function () {
-					isPlotVisible = !isPlotVisible;
-
-					if (isPlotVisible) {
-						// Retrieve the weight distribution plot
-						$.ajax({
-							url: "/tryGPT2error/graph",
-							type: "GET",
-							success: function (data) {
-								$("#weightDistributionPlot").attr("src", data);
-							},
-						});
-					}
-
-					// Show/hide the plot area
-					$("#plotArea").toggle(isPlotVisible);
 				});
 			});
 		</script>
