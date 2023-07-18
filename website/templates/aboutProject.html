@@ -80,142 +80,329 @@
                         with three novel error injection methods. <br>
                     </p>
                     <p>
-                        Developers don't know the limits of AI.
-                        The public is concerned about increased AI usage.
-                        Sam Altman has said "we've got to be careful" and "I think [the general public] should be happy
-                        that we are a little bit scared of this."
-                        We need more toolkits to understand the robustness of AI.
-                        What are the limits of emerging AI technology?
-                        What do failures in AI technology entail for us?
-
+                        Developers do not fully understand the limits of AI.
+                        When talking about the limits of AI, Sam Altman, founder of OpenAI, has said
+                    <blockquote>"we've got to
+                        be
+                        careful" and "I think [the general public] should be happy
+                        that we are a little bit scared of this."</blockquote> This highlights the importance of
+                    investigating the
+                    limits and Robustness of NLP models.
+                    More toolkits are needed to understand the robustness of AI.
                     </p>
+                    <p>
+                        What are the limits of emerging AI technology? <br>
+                        What do failures in AI technology entail for us?
+                    </p>
+
                 </div>
             </section>
 
             <!-- Two -->
             <section id="two" class="spotlights">
                 <section>
-                    <a href="generic.html" class="image">
-                        <img src="static/images/pic08.jpg" alt="" data-position="center center" />
+                    <a href="/" class="image">
+                        <img src="{{ url_for('static', filename='images/AIFlowChart.png') }}" alt="" style="justify-content: center;
+                        align-items: center;" data-position="center center" />
                     </a>
                     <div class="content">
                         <div class="inner">
                             <header class="major">
-                                <h3>Orci maecenas</h3>
+                                <h3>Natural Language Processing</h3>
                             </header>
                             <p>
-                                Nullam et orci eu lorem consequat tincidunt vivamus et
-                                sagittis magna sed nunc rhoncus condimentum sem. In efficitur
-                                ligula tate urna. Maecenas massa sed magna lacinia magna
-                                pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-                                consequat tincidunt. Vivamus et sagittis tempus.
+                                NLP is a subset of Artificial Intelligence. It is the technology that gives computers
+                                the
+                                ability to comprehend human language. It is found in existing technology such as ChatGPT
+                                or other Chatbots.
+
                             </p>
-                            <ul class="actions">
-                                <li><a href="generic.html" class="button">Learn more</a></li>
-                            </ul>
+
                         </div>
                     </div>
                 </section>
                 <section>
-                    <a href="generic.html" class="image">
-                        <img src="static/images/pic09.jpg" alt="" data-position="top center" />
+                    <a href="/" class="image">
+                        <br>
+                        <img src="{{ url_for('static', filename='images/timeline.png') }}" alt=""
+                            data-position="center center" style="justify-content: center;
+                            align-items: center;" />
                     </a>
                     <div class="content">
                         <div class="inner">
                             <header class="major">
-                                <h3>Rhoncus magna</h3>
+                                <h3>Explosion of NLP Technology</h3>
                             </header>
                             <p>
-                                Nullam et orci eu lorem consequat tincidunt vivamus et
-                                sagittis magna sed nunc rhoncus condimentum sem. In efficitur
-                                ligula tate urna. Maecenas massa sed magna lacinia magna
-                                pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-                                consequat tincidunt. Vivamus et sagittis tempus.
+                                With the release of ChatGPT in November 2022, NLP has exploded in popularity. ChatGPT
+                                was able to reach 1 million users in just 5 days which is signficantly quicker than the
+                                likes of other big technologies like Facebook or Spotify.
                             </p>
-                            <ul class="actions">
-                                <li><a href="generic.html" class="button">Learn more</a></li>
-                            </ul>
                         </div>
                     </div>
                 </section>
                 <section>
-                    <a href="generic.html" class="image">
-                        <img src="static/images/pic10.jpg" alt="" data-position="25% 25%" />
+                    <a href="/" class="image" style="padding-left:8px">
+                        <br>
+                        <img src="{{ url_for('static', filename='images/bitBefore.png') }}" alt=""
+                            style="padding-bottom: 10%; padding-top: 20%" />
+
+                        <img src="{{ url_for('static', filename='images/bitAfter.png') }}" alt="" />
                     </a>
                     <div class="content">
                         <div class="inner">
                             <header class="major">
-                                <h3>Sed nunc ligula</h3>
+                                <h3>Hardware Errors: Bitflips</h3>
                             </header>
                             <p>
-                                Nullam et orci eu lorem consequat tincidunt vivamus et
-                                sagittis magna sed nunc rhoncus condimentum sem. In efficitur
-                                ligula tate urna. Maecenas massa sed magna lacinia magna
-                                pellentesque lorem ipsum dolor. Nullam et orci eu lorem
-                                consequat tincidunt. Vivamus et sagittis tempus.
+                                To simulate hardware errors pur team is focusing on bit flips which are flips in a
+                                transistor caused
+                                by manufacturing errors or random transient events. This has been known to happen is
+                                real life. <br> <br>
+                                A cosmic ray from space came down and hit a transistor on the hardware that the e-voting
+                                system was being run on which caused the 13th bit of the number that controlled the
+                                votes for one candidate to switch from a 0 to a 1, increasing that vote tally by 4096
+                                (2^12) votes.
+                                This increase in votes was due to a bit flip from 0 to 1. <br><br>
+                                With AI models becoming more important in society's daily life, understanding the impact
+                                that these hardware errors can have on these models is necessary to improve upon
+                                existing AI technology.
+
+
                             </p>
-                            <ul class="actions">
-                                <li><a href="generic.html" class="button">Learn more</a></li>
-                            </ul>
+                        </div>
+                    </div>
+
+                </section>
+                <section>
+                    <a href="/" class="image" style="padding-left:8px">
+                        <br>
+                        <img src="{{ url_for('static', filename='images/system.png') }}" alt="" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>The System</h3>
+                            </header>
+                            <p>
+                                The project is broken down into three different Error injection methods: Auto Error
+                                Injection, Manual Error Injection, and Single Bit Error Injection. These errors are
+                                injected into the layers of the Neural Network of the Natural Language Model. We have
+                                built functionality with multiple models, the most interesting being GPT-2 and Bart.
+                                <br><br>
+                                The differences between the three error injection methods are broken down below.
+                            </p>
+                        </div>
+                    </div>
+                </section>
+                <section>
+                    <a href="/" class="image" style="padding-left:8px">
+                        <br>
+                        <img src="{{ url_for('static', filename='images/injectionConstraints.png') }}" alt="" />
+                    </a>
+                    <div class="content">
+                        <div class="inner">
+                            <header class="major">
+                                <h3>Injection Constraints</h3>
+                            </header>
+                            <p>The main goals of error injection methods were to keep quick responses to better
+                                accomodate website integration. Quick responses are also important to consider when
+                                running error injection over a long time if this project were to be developed into a
+                                benchmark tool.
+                                <br><br>
+                                Another important goal was to avoid over-injection as this represents unlikely scenarios
+                                that NLP models would almost never have to endure in normal circumstances. With
+                                over-injection, the results tend to lose their variety and become quite repetetive and
+                                illegible. Random symbols and punctuation are also a sign of over-injection.
+                            </p>
                         </div>
                     </div>
                 </section>
             </section>
+            <!-- Main Text -->
+            <section id="three">
+                <div class="inner">
+                    <header class="major">
+                        <h2>Error Injection Methodology</h2>
+                    </header>
+                    <h3>Auto Error Injection</h3>
+                    <div class="box">
+                        <p>
+                            Our first method of error injection is Auto Error Injection which takes in the number of
+                            parameters you want changed and what you want them changed to. It operates by looking
+                            for the most important nodes and it then changes the value of the entire tensor to the
+                            value that you have given. <br><br>There are significant limitations with this method
+                            one of
+                            them is over-injection where the model will almost always spit out gibberish due to the
+                            most important nodes being changed. Another important limitation is the lack of variety
+                            of outputs, due to the node that is chosen being changed to the same value no matter how
+                            often you run it, it will give back the same result.
+                        </p>
+                    </div>
+                    <h3>Manual Error Injection</h3>
+                    <div class="box">
+                        <p>
+                            The next method of error injection is Manual Error Injection which takes in a model,
+                            the
+                            node that you want to attack, scale factor which affects the error injection rate,
+                            and
+                            dropout rate which affects randomness and introduces another way to prevent over
+                            injection.<br><br>
+                            This attack works by creating an error mask which takes the size of the tensor of
+                            the
+                            node that is being attacked, generates a tensor of that size that contains powers of
+                            two,
+                            uses dropout and scalefactor to introduce randomness, and then injects the errors
+                            through
+                            XOR.
+                            <br><br>
+                            The benefits of this injector is primarily with its targeting capabilities; you are
+                            able
+                            to
+                            choose individual nodes that make up the model and attack them. This lets us isolate
+                            nodes
+                            and once injected will tell us how significant they really are. We have not explored
+                            the
+                            full capabilities of testing this with every node of a model and it may lead to a
+                            deeper
+                            understanding of how NLPs operate if done.
+                        </p>
+                    </div>
+                    <h3>Single Bit Error Injection</h3>
+                    <div class="box">
+                        <p>The final method of error injection is Bit Flip Injector which takes in the index
+                            of the node
+                            you
+                            want changed from the total list of nods in the model and how many you want
+                            changed. It
+                            operates by converting all elements of the tensor specified by the user to
+                            binary then
+                            flipping
+                            the number of bits specified by the user and converting all elements back to
+                            decimal. This
+                            new
+                            tensor replaces the old tensor in a modified model.
+                            <br><br>
+                            The main benefit of this injector is its subtlety. When slightly increasing the
+                            number of
+                            bits
+                            to flip, the output of the model becomes more and more distorted. This is
+                            especially helpful
+                            in
+                            finding the breaking point of the model, where grammar and spelling mistakes
+                            become complete
+                            gibberish. Another benefit is that you can specifically choose which tensor to
+                            alter,
+                            allowing
+                            the user to see the impact each tensor has.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Table -->
+
+            <div class="table-wrapper" style="padding-left:3%; padding-right: 3%;">
+                <table class=" alt">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Method</th>
+                            <th>Response</th>
+                            <th>Strengths</th>
+                            <th>Shortfalls</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Auto Error Injection</td>
+                            <td>Picks the most frequent parameter automatically
+                            </td>
+                            <td>10s</td>
+                            <td>- Simple, Fast
+                            </td>
+                            <td>- Responses can be illegible<br>
+                                - Repetitive outputs<br>
+                                - Over-injects errors</td>
+                        </tr>
+                        <tr>
+                            <td>Manual Error Injection</td>
+                            <td>Allows user to pick a node to inject errors onto
+                            </td>
+                            <td>30s</td>
+                            <td>- More interesting results<br>
+                                - Control of parameters
+                            </td>
+                            <td>- Slow<br>
+                                - Changes entire node<br>
+                                - Memory intensive
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Bit Error Injection</td>
+                            <td> Allows user to pick a specific parameter and number of bit flips to inject
+                                into the tensor
+                            </td>
+                            <td>15s</td>
+                            <td>
+                                -Variation of results<br>
+                                -Uses bit flips<br>
+                                -Subtle errors<br>
+                                -Shows progressively erroneous outputs<br>
+                                -Fast
+                            </td>
+                            <td>- Hard to see errors through graph<br>
+                                -Deeper analysis of results needed
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
 
             <!-- Three -->
             <section id="three">
                 <div class="inner">
-                    <header class="major">
-                        <h2>Massa libero</h2>
-                    </header>
+                    <h2>Try Error Injection</h2>
                     <p>
-                        Nullam et orci eu lorem consequat tincidunt vivamus et sagittis
-                        libero. Mauris aliquet magna magna sed nunc rhoncus pharetra.
-                        Pellentesque condimentum sem. In efficitur ligula tate urna.
-                        Maecenas laoreet massa vel lacinia pellentesque lorem ipsum dolor.
-                        Nullam et orci eu lorem consequat tincidunt. Vivamus et sagittis
-                        libero. Mauris aliquet magna magna sed nunc rhoncus amet pharetra
-                        et feugiat tempus.
+                        See the link below to try out our project!
                     </p>
                     <ul class="actions">
                         <li>
-                            <a href="generic.html" class="button next">Get Started</a>
+                            <a href="/aboutModel" class="button next">Get Started</a>
                         </li>
                     </ul>
                 </div>
             </section>
         </div>
+    </div>
+    <!-- Contact -->
 
-        <!-- Contact -->
-
-
-
-        <!-- Footer -->
-        <footer id="footer">
-            <div class="inner">
-                <ul class="icons">
-                    <li>
-                        <a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a>
-                    </li>
-                    <li>
-                        <a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a>
-                    </li>
-                </ul>
-                <ul class="copyright">
-                    <li>&copy; Untitled</li>
-                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                </ul>
-            </div>
-        </footer>
+    <!-- Footer -->
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li>
+                    <a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a>
+                </li>
+                <li>
+                    <a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a>
+                </li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Untitled</li>
+                <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+            </ul>
+        </div>
+    </footer>
     </div>
 
     <!-- Scripts -->
