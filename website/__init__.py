@@ -20,6 +20,7 @@ def create_app():
     from .tryBertSingle import tryBertSingle
     from .tryRobertaSingle import tryRobertaSingle
     from .tryGPT2Single import tryGPT2Single
+    from .aboutProject import aboutProject
 
     app.register_blueprint(views, url_prefix="/")
     app.register_blueprint(about, url_prefix="/")
@@ -36,5 +37,6 @@ def create_app():
     app.register_blueprint(tryBertSingle, url_prefix="/")
     app.register_blueprint(tryRobertaSingle, url_prefix="/")
     app.register_blueprint(tryGPT2Single, url_prefix="/")
+    app.register_blueprint(aboutProject, url_prefix="/")
 
     return app
