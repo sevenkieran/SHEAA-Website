@@ -52,8 +52,6 @@
 									</button>
 								</div>
 							</form>
-							<!-- Add the button here -->
-							<button type="button" id="plotButton" class="btn btn-primary">See RoBERTa's Weight Distribution</button>
 						</div>
 						<!-- Sliders -->
 
@@ -148,21 +146,6 @@
 		document.getElementById(elementId).textContent = name + ":" + value;
 		document.getElementById("numSentences").value = value;
 	}
-	// Button click event handler
-	$(document).ready(function () {
-                    var imageAppended = false;
-                    $("#plotButton").on("click", function () {
-                        if(!imageAppended) {
-                        // Replace 'path/to/plot/image.png' with the actual path to your image file
-                        var imagePath = "{{ url_for('static', filename='images/Roberta_UnalteredDistribution.png') }}";
-                        // Create an <img> element and set the 'src' attribute to the image path
-                        var imageElement = $('<img>').attr('src', imagePath);
-                        // Append the image element to the card body
-                        $("#messageFormeight").append(imageElement);
-                        imageAppended = true;
-                        }
-                    });
-                });
 				// Send Message
 	$(document).ready(function () {
 		$("#messageArea").on("submit", function (event) {

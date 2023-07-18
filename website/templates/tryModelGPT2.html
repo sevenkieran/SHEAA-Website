@@ -68,10 +68,6 @@ content%}
 									style="--value: {{ slider_value2 }};" />
 								<span id="sliderValue2" class="slider-value">Length: {{ slider_value2 }}</span>
 							</div>
-
-							<!-- Plot button -->
-							 <!-- Add the button here -->
-							 <button type="button" id="plotButton" class="btn btn-primary">See GPT2's Weight Distribution</button>
 						</div>
 					</div>
 				</div>
@@ -91,21 +87,6 @@ content%}
 	function updateValue(value, elementId, name) {
 		document.getElementById(elementId).textContent = name + ":" + value;
 	}
-	// Button click event handler
-	$(document).ready(function () {
-                    var imageAppended = false;
-                    $("#plotButton").on("click", function () {
-                        if(!imageAppended) {
-                        // Replace 'path/to/plot/image.png' with the actual path to your image file
-                        var imagePath = "{{ url_for('static', filename='images/gpt2_UnalteredDistribution.png') }}";
-                        // Create an <img> element and set the 'src' attribute to the image path
-                        var imageElement = $('<img>').attr('src', imagePath);
-                        // Append the image element to the card body
-                        $("#messageFormeight").append(imageElement);
-                        imageAppended = true;
-                        }
-                    });
-                });
 	$(document).ready(function () {
 
 			$("#messageArea").on("submit", function (event) {

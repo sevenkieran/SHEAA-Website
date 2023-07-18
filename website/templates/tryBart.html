@@ -46,8 +46,7 @@
                                     </div>
                                 </form>
                                 <br>
-                                <!-- Add the button here -->
-                                <button type="button" id="plotButton" class="btn btn-primary">See Bart's Weight Distribution</button>
+                               
 
                                 <!-- Sliders -->
                                 <!-- <form id="sliderSend" class="input-group"> -->
@@ -130,22 +129,6 @@
                 function updateValue(value, elementId, name) {
                     document.getElementById(elementId).textContent = name + ":" + value;
                 }
-
-                // Button click event handler
-                $(document).ready(function () {
-                    var imageAppended = false;
-                    $("#plotButton").on("click", function () {
-                        if(!imageAppended) {
-                        // Replace 'path/to/plot/image.png' with the actual path to your image file
-                        var imagePath = "{{ url_for('static', filename='images/Bart_UnalteredDistribution.png') }}";
-                        // Create an <img> element and set the 'src' attribute to the image path
-                        var imageElement = $('<img>').attr('src', imagePath);
-                        // Append the image element to the card body
-                        $("#messageFormeight").append(imageElement);
-                        imageAppended = true;
-                        }
-                    });
-                });
 
                 // Form submit event handler
                 $(document).ready(function () {
