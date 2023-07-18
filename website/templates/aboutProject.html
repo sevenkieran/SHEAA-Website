@@ -368,7 +368,7 @@
                     </p>
                     <ul class="actions">
                         <li>
-                            <a href="/aboutModel" class="button next">Get Started</a>
+                            <a href="/AboutModel" class="button next">Get Started</a>
                         </li>
                     </ul>
                 </div>
@@ -376,29 +376,62 @@
         </div>
     </div>
     <!-- Contact -->
+    <!--Styles-->
+    <style>
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #wrapper {
+            flex: 1 0 auto;
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer#footer {
+            width: 100%;
+            flex-shrink: 0;
+            /* This ensures that the footer doesn't shrink if there's not enough space */
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: white;
+            /* Change this to your preferred color */
+            color: black;
+            /* This is the text color */
+            padding: 10px 20px;
+            /* This is the inner spacing of the button */
+            text-decoration: none;
+            /* This removes the underline */
+            border-radius: 5px;
+            /* This gives the button rounded corners */
+            transition: background-color 0.3s ease;
+            /* This adds a nice hover effect */
+        }
+
+        .btn:hover {
+            background-color: #666;
+            /* This changes the background color when you hover over the button */
+        }
+    </style>
 
     <!-- Footer -->
     <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li>
-                    <a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a>
-                </li>
-                <li>
-                    <a href="#" class="icon brands alt fa-linkedin-in"><span class="label">LinkedIn</span></a>
-                </li>
+        <div>
+            <ul>
+                <a href="https://github.com/liambaker10/SHEAA" class="btn" target="_blank">
+                    <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"
+                        alt="GitHub logo" style="width: 20px; height: 20px; vertical-align: middle;">
+                    Visit Our GitHub
+                </a>
             </ul>
             <ul class="copyright">
-                <li>&copy; Untitled</li>
+                <li>&copy; Villanova College of Engineering</li>
                 <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
             </ul>
         </div>

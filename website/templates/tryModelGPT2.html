@@ -33,8 +33,8 @@ content%}
 									<span class="online_icon"></span>
 								</div>
 								<div class="user_info">
-									<span color="blue">&nbsp GPT-2</span>
-									<p color="dark">&nbsp Enter a prompt:</p>
+									<span color="blue">&nbsp GPT-2</span><br>
+									<span color="black">&nbsp Enter a prompt:</p>
 								</div>
 							</div>
 						</div>
@@ -89,45 +89,45 @@ content%}
 	}
 	$(document).ready(function () {
 
-			$("#messageArea").on("submit", function (event) {
-				var sliderValue1 = $("#slider1").val();
-				var sliderValue2 = $("#slider2").val();
-				var rawText = $("#text").val();
+		$("#messageArea").on("submit", function (event) {
+			var sliderValue1 = $("#slider1").val();
+			var sliderValue2 = $("#slider2").val();
+			var rawText = $("#text").val();
 
-				var userHtml =
-					'<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
-					rawText +
-					'<span class="msg_time_send">';
+			var userHtml =
+				'<div class="d-flex justify-content-end mb-4"><div class="msg_cotainer_send">' +
+				rawText +
+				'<span class="msg_time_send">';
 
-				$("#text").val("");
-				$("#messageFormeight").append(userHtml).append("<hr>");
+			$("#text").val("");
+			$("#messageFormeight").append(userHtml).append("<hr>");
 
-				$.ajax({
-					data: {
-						msg: rawText,
-						len: sliderValue2, // Add the slider value to the data object
-						temperature: sliderValue1
-					},
-					type: "POST",
-					url: "/tryGPT2/get",
-					success: function (data) {
-						var botHtml =
-							'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img" width="40" /><span class="msg_time">';
-
-						$("#messageFormeight").append(botHtml + data + "</span></div></div>").append("<hr>");
-					}
-				}).done(function (data) {
+			$.ajax({
+				data: {
+					msg: rawText,
+					len: sliderValue2, // Add the slider value to the data object
+					temperature: sliderValue1
+				},
+				type: "POST",
+				url: "/tryGPT2/get",
+				success: function (data) {
 					var botHtml =
-						'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
-						data +
-						'<span class="msg_time">' +
-						"<hr>";
-					$("#messageFormeight").append($.parseHTML(botHtml));
-				});
-				event.preventDefault();
-				});
+						'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img" width="40" /><span class="msg_time">';
+
+					$("#messageFormeight").append(botHtml + data + "</span></div></div>").append("<hr>");
+				}
+			}).done(function (data) {
+				var botHtml =
+					'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
+					data +
+					'<span class="msg_time">' +
+					"<hr>";
+				$("#messageFormeight").append($.parseHTML(botHtml));
 			});
-			</script>
+			event.preventDefault();
+		});
+	});
+</script>
 
 </html>
 {% endblock %}
