@@ -261,15 +261,6 @@ input:checked+.slider:before {
 	transform: translateX(26px);
 }
 
-/* Styles for the buttons */
-.button-new-container {
-	display: flex;
-	justify-content: center;
-	padding: 2% 0;
-	flex-wrap: wrap;
-	/* Allow buttons to wrap to a new line when screen size is smaller */
-}
-
 .custom-button {
 	display: inline-block;
 	padding: 10px 20px;

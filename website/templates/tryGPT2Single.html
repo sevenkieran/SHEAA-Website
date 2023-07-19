@@ -25,6 +25,67 @@
         <div class="container-fluid h-100">
             <div class="rowChat justify-content-center h-100">
                 <div class="col-md-8 col-xl-6 chat">
+                    <!-- Warning -->
+                    <style>
+                        /* Styles for the alert */
+                        .alert {
+                            position: relative;
+                            /* Set the position to relative to make sure the close button is positioned correctly */
+                            padding: 15px 100px 15px 15px;
+                            /* Add padding to the alert to create space for the close button */
+                            margin: 20px;
+                            /* Add margin for spacing between alerts */
+                        }
+
+                        /* Styles for the close button */
+                        .btn-close {
+                            position: absolute;
+                            /* Set the position to absolute to place the close button correctly */
+                            top: 50%;
+                            /* Position the button 50% from the top */
+                            right: 1px;
+                            /* Position the button 10px from the right */
+                            transform: translate(0, -50%);
+                            /* Center the button vertically */
+                            width: 1%;
+                            /* Adjust the width of the button (the box around the "X") */
+                            height: 40px;
+                            /* Adjust the height of the button (the box around the "X") */
+                            font-size: 24px;
+                            /* Increase the font size to make the "X" itself slightly larger */
+                            line-height: 1;
+                            /* Set the line height to 1 to vertically center the "X" */
+                            text-align: center;
+                            /* Center the "X" horizontally */
+                            border: 2px solid #383b4d;
+                            /* Add a border to the button (the box around the "X") */
+                            background-color: transparent;
+                            /* Set the background color to transparent to hide the default background */
+                            color: #383b4d;
+                            /* Set the color of the "X" */
+                        }
+
+                        .btn-close:hover {
+                            background-color: #383b4d;
+                            /* Change the background color when hovering over the "X" */
+                            color: #fff;
+
+                            /* Change the color of the "X" when hovering over it */
+                            /* Styles for the buttons */
+                            .button-new-container {
+                                display: flex;
+                                justify-content: center;
+                                padding: 2% 0;
+                                flex-wrap: wrap;
+                                /* Allow buttons to wrap to a new line when screen size is smaller */
+                            }
+                        }
+                    </style>
+                    <div class="alert alert-secondary alert-dismissible fade show" role="alert">
+                        Warning: The models may provide innapropriate or biased responses.
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                            aria-hidden="true">&times;</button>
+                    </div>
                     <div class="card">
                         <div class="card-header msg_head">
                             <div class="d-flex bd-highlight">
