@@ -2,7 +2,7 @@
 {% block title %}Bart Error Injection{% endblock %}
 {% block content%}
 
-<html>
+
 <div class="trymodel">
     <link href="{{ url_for('static', filename='css/chatbox/maxcdn.bootstrap.css') }}" rel="stylesheet"
         id="bootstrap-css" />
@@ -22,8 +22,7 @@
     </head>
 
     <body>
-        <div id="wrapper" style="padding-bottom: -5%>
-            <div class=" container-fluid h-100">
+        <div class="container-fluid h-100">
             <div class="rowChat justify-content-center h-100">
                 <div class="col-md-8 col-xl-6 chat">
                     <div class="card">
@@ -59,9 +58,9 @@
                         <!-- #Parameters for AlexFunc -->
                         <div class="slider-container">
                             <input type="range" class="custom-range" min="0" max="30" step="1" id="slider1"
-                                oninput="updateValue(this.value, 'sliderValue1', '#Parameters')"
+                                oninput="updateValue(this.value, 'sliderValue1', '#Tensors')"
                                 style="--value: {{ slider_value1 }};" />
-                            <span id="sliderValue1" class="slider-value">#Parameters: {{ slider_value1 }}</span>
+                            <span id="sliderValue1" class="slider-value">#Tensors: {{ slider_value1 }}</span>
                         </div>
                         <!-- NewVal for ALexFUnc -->
                         <div class="slider-container">
@@ -102,14 +101,25 @@
                     </div>
                 </div>
             </div>
-      </div>
-     </div>
-    </div>
+            <br>
+            <div class="box" style="margin-left: 5%; margin-right: 5%;">
+                <h4 style="color:white">Auto Error Injection</h4>
+                <p style="font-size: 110%">
+                    <em>#Tensors</em> represents the number of tensors you want to change. A higher number would
+                    result in more errors. <br><em>NewVal</em> represents the number you want to change the tensors to.
+                    A NewVal closer to zero typically results in more normal responses.
+                </p>
+                <h4 style="color:white">Manual Error Injection</h4>
+                <p>
+                    To enter <strong>Manual Error Injection</strong>, select any node from the dropdown
+                    except -Auto Error Injection-.<br> <em>DropoutRate</em> increases the randomness of the response.
+                    <br><em>ScaleFactor</em> increases the number of error to be injected.
+                </p>
+            </div>
+        </div>
+    </body>
 </div>
-</div>
-</body>
 
-</html>
 
 <!-- JavaScript -->
 <script>

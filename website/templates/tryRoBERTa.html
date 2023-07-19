@@ -54,88 +54,38 @@
 							</form>
 						</div>
 						<!-- Sliders -->
-
-						<style>
-							.slider-container {
-								display: flex;
-								align-items: center;
-							}
-
-							.slider-value {
-								margin-left: 10px;
-								color: black;
-							}
-
-							.custom-range {
-								width: 200px;
-								margin-right: 10px;
-							}
-
-							.custom-range::-webkit-slider-runnable-track {
-								background-color: #ccc;
-								height: 4px;
-							}
-
-							.custom-range::-moz-range-track {
-								background-color: #ccc;
-								height: 4px;
-							}
-
-							.custom-range::-ms-track {
-								background-color: #ccc;
-								height: 4px;
-							}
-
-							.custom-range::-webkit-slider-thumb {
-								background-color: #007bff;
-								border: none;
-								height: 14px;
-								width: 14px;
-								border-radius: 50%;
-								margin-top: -5px;
-							}
-
-							.custom-range::-moz-range-thumb {
-								background-color: #007bff;
-								border: none;
-								height: 14px;
-								width: 14px;
-								border-radius: 50%;
-								margin-top: -5px;
-							}
-
-							.custom-range::-ms-thumb {
-								background-color: #007bff;
-								border: none;
-								height: 14px;
-								width: 14px;
-								border-radius: 50%;
-								margin-top: -5px;
-							}
-						</style>
-
 						<div class="slider-container">
-							<input type="range" class="custom-range" min="0" max="100" step="1" id="slider1"
+							<input type="range" class="custom-range" min="0" max="30" step="1" id="slider1"
 								oninput="updateValue(this.value, 'sliderValue1', '# sentences')"
 								style="--value: {{ slider_value1 }};" />
-							<span id="sliderValue1" class="slider-value">#sentences: {{ slider_value1 }}</span>
+							<span id="sliderValue1" class="slider-value"># sentences: {{ slider_value1 }}</span>
 						</div>
 						<input type="hidden" id="numSentences" name="num_sentences" value="5">
 					</div>
 				</div>
 			</div>
 		</div>
+
+		<br />
+		<div class="box" style="margin-left: 5%; margin-right: 5%;">
+			<p style="color: white; padding-left: 3%; font-size: 110%">
+				RoBERTa is a masked language model meaning that it tries to guess what
+				the next word in a sequence is. To use RoBERTa and get a response, the user
+				must enter their input in a specific manner using the [MASK] keyword.
+				<br />For example:
+				<strong>RoBERTa's favorite color is [MASK]</strong>
+			</p>
+		</div>
+		<div class="box" style="margin-left: 5%; margin-right: 5%;">
+			<p style="color: white; padding-left: 3%; font-size: 110%">
+				<em>#Sentences</em> changes the amount of responses to give.
+				Increasing the sentenes may increase the time it takes for a response.
+			</p>
+		</div>
+		<br />
 	</body>
-	<br />
-	<p style="color: white; padding-left: 3%">
-		RoBERTa is a masked language model meaning that it tries to guess what
-		the next word in a sequence is. To use RoBERTa and get a response, the user
-		must enter their input in a specific manner using the [MASK] keyword.
-		<br />For example:
-		<strong>RoBERTa's favorite color is [MASK]</strong>
-	</p>
-	<br />
 </div>
+
 
 </html>
 
@@ -149,10 +99,6 @@
 	// Send Message
 	$(document).ready(function () {
 		$("#messageArea").on("submit", function (event) {
-			const date = new Date();
-			const hour = date.getHours();
-			const minute = date.getMinutes();
-			const str_time = hour + ":" + minute;
 			var rawText = $("#text").val();
 
 			var userHtml =

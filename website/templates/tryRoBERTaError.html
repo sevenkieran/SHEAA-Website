@@ -60,9 +60,9 @@
 						<!-- #Parameters for AlexFunc -->
 						<div class="slider-container">
 							<input type="range" class="custom-range" min="0" max="30" step="1" id="slider1"
-								oninput="updateValue(this.value, 'sliderValue1', '#Parameters')"
+								oninput="updateValue(this.value, 'sliderValue1', '#Tensors')"
 								style="--value: {{ slider_value1 }};" />
-							<span id="sliderValue1" class="slider-value">#Parameters: {{ slider_value1 }}</span>
+							<span id="sliderValue1" class="slider-value">#Tensors: {{ slider_value1 }}</span>
 						</div>
 						<!-- NewVal for ALexFUnc -->
 						<div class="slider-container">
@@ -102,17 +102,34 @@
 
 				</div>
 			</div>
+			<br />
+			<div class="box" style="margin-left: 5%; margin-right: 5%;">
+				<p style="color: white; padding-left: 3%; font-size: 110%">
+					RoBERTa is a masked language model meaning that it tries to guess what
+					the next word in a sequence is. To use RoBERTa and get a response, the user
+					must enter their input in a specific manner using the &lt;mask&gt; keyword.
+					<br />For example:
+					<strong>RoBERTa's favorite color is &lt;mask&gt;</strong>
+				</p>
+			</div>
+			<br>
+			<div class="box" style="margin-left: 5%; margin-right: 5%;">
+				<h4 style="color:white">Auto Error Injection</h4>
+				<p style="font-size: 110%">
+					<em>#Tensors</em> represents the number of tensors you want to change. A higher number would
+					result in more errors. <br><em>NewVal</em> represents the number you want to change the tensors to.
+					A NewVal closer to zero typically results in more normal responses.
+				</p>
+				<h4 style="color:white">Manual Error Injection</h4>
+				<p>
+					To enter <strong>Manual Error Injection</strong>, select any node from the dropdown
+					except -Auto Error Injection-.<br> <em>DropoutRate</em> increases the randomness of the response.
+					<br><em>ScaleFactor</em> increases the number of error to be injected.
+				</p>
+			</div>
 		</div>
 	</body>
-	<br />
-	<p style="color: white; padding-left: 3%">
-		RoBERTa is a masked language model meaning that it tries to guess what
-		the next word in a sequence is. To use RoBERTa and get a response, the user
-		must enter their input in a specific manner using the &lt;mask&gt; keyword.
-		<br />For example:
-		<strong>RoBERTa's favorite color is &lt;mask&gt;</strong>
-	</p>
-	<br />
+
 </div>
 
 </html>

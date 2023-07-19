@@ -58,13 +58,13 @@ content%}
 							<br>
 							<div class="slider-container">
 								<input type="range" class="custom-range" min=".1" max="3" step=".01" id="slider1"
-									oninput="updateValue(this.value, 'sliderValue1', 'Temperature')"
+									value="1.0" oninput="updateValue(this.value, 'sliderValue1', 'Temperature')"
 									style="--value: {{ slider_value1 }};" />
 								<span id="sliderValue1" class="slider-value">Temperature: {{ slider_value1 }}</span>
 							</div>
 							<div class="slider-container">
-								<input type="range" class="custom-range" min="0" max="100" step="1" id="slider2"
-									oninput="updateValue(this.value, 'sliderValue2', 'Length')"
+								<input type="range" class="custom-range" min="10" max="100" step="1" id="slider2"
+									value="50" oninput="updateValue(this.value, 'sliderValue2', 'Length')"
 									style="--value: {{ slider_value2 }};" />
 								<span id="sliderValue2" class="slider-value">Length: {{ slider_value2 }}</span>
 							</div>
@@ -72,14 +72,18 @@ content%}
 					</div>
 				</div>
 			</div>
+			<br>
+			<div class="box" style="margin-left: 5%; margin-right: 5%;">
+				<p style="color: white; padding-left: 3%; font-size: 110%">
+					<em>Temperature</em> affects the randomness of the responses. A temperature higher than 1.0 results
+					in more randomness while lower than 1.0 results in less random and more repeatable responses. 1.0 is
+					the default.<br><br>
+					<em>Length</em> affects how long the response will be. 50 is the default and results in the most
+					normal responses. Increasing <em>Length</em> may increase the time it takes for a response.
+				</p>
+			</div>
 		</div>
 	</body>
-	<p style="color: white; padding-left: 3%">
-		Temperature has a default value of 1.0 in the original model. Increasing it causes a more random
-		output, while decreasing it below 1.0 makes the output less random and more repeatable.<br>
-		After clicking the "plot weight distribution" button, if it takes you to a new page,<br>
-		just click the back button to return to the GPT2 model page.
-	</p>
 </div>
 <!-- Slider -->
 <script>
@@ -117,12 +121,12 @@ content%}
 					$("#messageFormeight").append(botHtml + data + "</span></div></div>").append("<hr>");
 				}
 			}).done(function (data) {
-				var botHtml =
-					'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
-					data +
-					'<span class="msg_time">' +
-					"<hr>";
-				$("#messageFormeight").append($.parseHTML(botHtml));
+				// var botHtml =
+				// 	'<div class="d-flex justify-content-start mb-4"><div class="img_cont_msg"><img src="https://i.ibb.co/fSNP7Rz/icons8-chatgpt-512.png" class="rounded-circle user_img_msg" width="40" display="inline-block" hspace="20"></div><div class="msg_cotainer">' +
+				// 	data +
+				// 	'<span class="msg_time">' +
+				// 	"<hr>";
+				// $("#messageFormeight").append($.parseHTML(botHtml));
 			});
 			event.preventDefault();
 		});

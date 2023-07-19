@@ -58,9 +58,9 @@
                         <!-- #Parameters for AlexFunc -->
                         <div class="slider-container">
                             <input type="range" class="custom-range" min="0" max="100" step="1" id="slider1"
-                                oninput="updateValue(this.value, 'sliderValue1', 'Parameter Index')"
+                                oninput="updateValue(this.value, 'sliderValue1', 'Tensor Index')"
                                 style="--value: {{ slider_value1 }};" />
-                            <span id="sliderValue1" class="slider-value">Parameter Index: {{ slider_value1 }}</span>
+                            <span id="sliderValue1" class="slider-value">Tensor Index: {{ slider_value1 }}</span>
                         </div>
                         <!-- NewVal for ALexFUnc -->
                         <div class="slider-container">
@@ -72,21 +72,24 @@
                         <br>
                         <hr class="chat" />
                         <!-- Buttons -->
-                        <div style="display: flex; justify-content: center; padding: 2% 0;">
-                            <a href="/tryBart" class="button default" style="background-color: #383b4d;">Try the
-                                Model</a>
-                            <span style="width: 5%;"></span>
-                            <a href="/tryBartError" class="button default" style="background-color: #383b4d;">Try
-                                Error
-                                Injection</a>
+                        <div class="button-new-container">
+                            <a href="/tryBart" class="custom-button default">Try the Model</a>
+                            <a href="/tryBartError" class="custom-button default">Try Error Injection</a>
                         </div>
-
                         <!-- Add dropdown here if needed -->
                         <br>
                         </form>
                     </div>
 
                 </div>
+            </div>
+            <div class="box" style="margin-left: 5%; margin-right: 5%;">
+                <h4 style="color:white">Bit Error Injection</h4>
+                <p style="font-size: 110%">
+                    <em>Tensor Index</em> represents the index of the tensor you want to change. <br>
+                    <em>Number of Bits</em> represents the number of bitflips to inject.
+                    A higher value will result in more errors.
+                </p>
             </div>
         </div>
     </body>

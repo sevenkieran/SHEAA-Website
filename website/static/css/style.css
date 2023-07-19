@@ -261,6 +261,24 @@ input:checked+.slider:before {
 	transform: translateX(26px);
 }
 
+/* Styles for the buttons */
+.button-new-container {
+	display: flex;
+	justify-content: center;
+	padding: 2% 0;
+	flex-wrap: wrap;
+	/* Allow buttons to wrap to a new line when screen size is smaller */
+}
+
+.custom-button {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #242943;
+	color: #fff;
+	text-decoration: none;
+	margin: 5px;
+}
+
 /* Rounded sliders */
 .slider.round {
 	border-radius: 34px;
@@ -2972,6 +2990,7 @@ button,
 	white-space: nowrap;
 }
 
+
 input[type="submit"]:hover,
 input[type="submit"]:active,
 input[type="reset"]:hover,
@@ -3744,8 +3763,8 @@ body.is-preload #header.alt {
 
 @media screen and (max-width: 736px) {
 	#header {
-		height: 2.75em;
-		line-height: 2.75em;
+		height: 3.25em;
+		line-height: 3.6em;
 	}
 
 	#header .logo {
