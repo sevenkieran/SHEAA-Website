@@ -1184,8 +1184,8 @@ pre code {
 
 	.col-md-8 {
 		-ms-flex: 0 0 66.666667%;
-		flex: 0 0 66.666667%;
-		max-width: 66.666667%;
+		flex: 0 0 66.66666%;
+		max-width: 100%;
 	}
 
 	.col-md-9 {
@@ -1596,8 +1596,8 @@ pre code {
 
 	.col-xl-6 {
 		-ms-flex: 0 0 50%;
-		flex: 0 0 50%;
-		max-width: 50%;
+		flex: 0 0 60%;
+		max-width: 60%;
 	}
 
 	.col-xl-7 {
