@@ -270,6 +270,41 @@ input:checked+.slider:before {
 	margin: 5px;
 }
 
+/* New subclass of .box with custom styles */
+.custom-box {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.custom-box h4 {
+	color: white;
+}
+
+.custom-box p {
+	font-size: 130%;
+}
+
+/* New subclass of .box with custom styles */
+.top-box {
+	margin-left: -2%;
+	margin-right: -2%;
+}
+
+.top-box p {
+	color: white;
+	padding-left: 3%;
+	font-size: 130%;
+}
+
+
+h4#errorInjectionMessage {
+	/* display: inline-block; */
+	color: black;
+	display: flex;
+	justify-content: center;
+	padding-top: 3px;
+}
+
 /* Rounded sliders */
 .slider.round {
 	border-radius: 34px;

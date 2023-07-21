@@ -86,6 +86,16 @@
 						<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
 							aria-hidden="true">&times;</button>
 					</div>
+					<div class="box top-box">
+						<p>
+							Bert is a masked language model meaning that it tries to guess what
+							the next word in a sequence is. To use Bert and get a response, the user
+							must enter their input in a specific manner using the [MASK] keyword.
+							Also, make sure your prompt ends with a period. <br><br> For example:
+							<strong>Bert's favorite color is [MASK].</strong>
+						</p>
+					</div>
+					<h4 style="color:white">See more about the different modes below the chat box</h4>
 					<div class="card">
 						<div class="card-header msg_head">
 							<div class="d-flex bd-highlight">
@@ -145,15 +155,20 @@
 							<span id="sliderValue4" class="slider-value">ScaleFactor: {{ slider_value4 }}</span>
 						</div>
 						<br>
-						<div class="dropdown-container">
-							<!-- Make sure to pass the option values inside the py file -->
-							<!-- See render_template() in tryGPT2error.py for an example -->
-							<select id="selectCategory" class="select-category">
-								<option value="Alex">- Auto Error Injection -</option>
-								{% for option_value in option_values %}
-								<option value="{{ option_value }}">{{ option_value }}</option>
-								{% endfor %}
-							</select>
+						<div class="dropdown-mode">
+							<div class="dropdown-container">
+								<!-- Make sure to pass the option values inside the py file -->
+								<!-- See render_template() in tryGPT2error.py for an example -->
+								<select id="selectCategory" class="select-category" onchange="updateErrorInjection()">
+									<option value="Alex">- Auto Error Injection -</option>
+									{% for option_value in option_values %}
+									<option value="{{ option_value }}">{{ option_value }}</option>
+									{% endfor %}
+								</select>
+							</div>
+							<h4 id="errorInjectionMessage">
+								Mode: Auto Error Injection
+							</h4>
 						</div>
 						<br>
 						</form>
@@ -161,29 +176,25 @@
 
 				</div>
 			</div>
-			<br />
-			<div class="box" style="margin-left: 5%; margin-right: 5%;">
-				<p style="color: white; padding-left: 3%">
-					Bert is a masked language model meaning that it tries to guess what
-					the next word in a sequence is. To use Bert and get a response, the user
-					must enter their input in a specific manner using the [MASK] keyword.
-					Also, make sure your prompt ends with a period. <br> For example:
-					<strong>Bert's favorite color is [MASK].</strong>
-				</p>
-			</div>
+
 			<br>
-			<div class="box" style="margin-left: 5%; margin-right: 5%;">
-				<h4 style="color:white">Auto Error Injection</h4>
-				<p style="font-size: 110%">
+			<div class="box custom-box">
+				<header class="major">
+					<h4>Auto Error Injection</h4>
+				</header>
+				<p>
 					<em>#Tensors</em> represents the number of tensors you want to change. A higher number would
 					result in more errors. <br><em>NewVal</em> represents the number you want to change the tensors to.
 					A NewVal closer to zero typically results in more normal responses.
 				</p>
-				<h4 style="color:white">Manual Error Injection</h4>
+				<header class="major">
+					<h4>Manual Error Injection</h4>
+				</header>
 				<p>
 					To enter <strong>Manual Error Injection</strong>, select any node from the dropdown
 					except -Auto Error Injection-.<br> <em>DropoutRate</em> increases the randomness of the response.
-					<br><em>ScaleFactor</em> increases the number of error to be injected.
+					<br><em>ScaleFactor</em> increases the number of error to be injected.<br>
+					<strong>Manual Error Injection takes at least 30 seconds for a response</strong>
 				</p>
 			</div>
 		</div>
@@ -198,6 +209,18 @@
 	// Update the slider value display
 	function updateValue(value, elementId, name) {
 		document.getElementById(elementId).textContent = name + ":" + value;
+	}
+</script>
+<!-- Display what mode the user is currently in -->
+<script>
+	function updateErrorInjection() {
+		var selectedOption = document.getElementById("selectCategory").value;
+		var errorInjectionMessage = document.getElementById("errorInjectionMessage");
+		if (selectedOption === "Alex") {
+			errorInjectionMessage.textContent = "Mode: Auto Error Injection";
+		} else {
+			errorInjectionMessage.textContent = "Mode: Manual Error Injection";
+		}
 	}
 </script>
 <!-- Disable sliders when using the Satrant Error injection method -->
