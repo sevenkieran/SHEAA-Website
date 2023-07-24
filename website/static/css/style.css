@@ -270,33 +270,6 @@ input:checked+.slider:before {
 	margin: 5px;
 }
 
-/* New subclass of .box with custom styles */
-.custom-box {
-	margin-left: 5%;
-	margin-right: 5%;
-}
-
-.custom-box h4 {
-	color: white;
-}
-
-.custom-box p {
-	font-size: 130%;
-}
-
-/* New subclass of .box with custom styles */
-.top-box {
-	margin-left: -2%;
-	margin-right: -2%;
-}
-
-.top-box p {
-	color: white;
-	padding-left: 3%;
-	font-size: 130%;
-}
-
-
 h4#errorInjectionMessage {
 	/* display: inline-block; */
 	color: black;
@@ -2530,9 +2503,12 @@ input[type="radio"]+label:before {
 /* Box */
 
 .box {
-	border: solid 1px rgba(212, 212, 255, 0.1);
+	border: solid 5px rgba(212, 212, 255, 0.1);
 	margin-bottom: 2em;
 	padding: 1.5em;
+	/* background-color: #CDCDCD; */
+	/* background-color: #877ebc; */
+	background-color: #f9f5ff;
 }
 
 .box> :last-child,
@@ -2545,6 +2521,48 @@ input[type="radio"]+label:before {
 	border: 0;
 	border-radius: 0;
 	padding: 0;
+}
+
+.box p {
+	padding-left: 3%;
+	font-size: 110%;
+	color: black;
+	font-weight: 400;
+}
+
+.box strong {
+	font-size: 110%;
+	color: #2a2f4a;
+}
+
+.box h3 {
+	color: #2a2f4a;
+}
+
+/* New subclass of .box with custom styles */
+.custom-box {
+	margin-left: 5%;
+	margin-right: 5%;
+}
+
+.custom-box h4 {
+	/* color: white; */
+}
+
+.custom-box p {
+	font-size: 130%;
+}
+
+/* New subclass of .box with custom styles */
+.top-box {
+	margin-left: -2%;
+	margin-right: -2%;
+}
+
+.top-box p {
+	/* color: white; */
+	padding-left: 3%;
+	font-size: 130%;
 }
 
 /* Icon */
@@ -2719,6 +2737,34 @@ dl dt {
 
 dl dd {
 	margin-left: 2em;
+}
+
+/* New added actions smart subclass */
+/* Base styles for the actions class */
+.new {
+	display: -moz-flex;
+	display: -webkit-flex;
+	display: -ms-flex;
+	display: flex;
+	cursor: default;
+	list-style: none;
+	margin-left: -1em;
+	padding-left: 0;
+}
+
+/* Smart styles using media queries */
+.smart {
+	display: block;
+	/* Default display setting for small screens */
+}
+
+/* Change display to flex for screen size greater than 410px */
+@media (min-width: 480px) {
+	.smart {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 }
 
 /* Actions */

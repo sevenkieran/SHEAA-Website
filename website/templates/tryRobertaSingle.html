@@ -86,6 +86,15 @@
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
                             aria-hidden="true">&times;</button>
                     </div>
+                    <div class="box">
+                        <p style="padding-left: 3%">
+                            RoBERTa is a masked language model meaning that it tries to guess what
+                            the next word in a sequence is. To use RoBERTa and get a response, the user
+                            must enter their input in a specific manner using the &lt;mask&gt; keyword.
+                            <br />For example:
+                            <strong>RoBERTa's favorite color is &lt;mask&gt;</strong>
+                        </p>
+                    </div>
                     <div class="card">
                         <div class="card-header msg_head">
                             <div class="d-flex bd-highlight">
@@ -146,16 +155,7 @@
             </div>
             <br>
             <div class="box" style="margin-left: 5%; margin-right: 5%;">
-                <p style="color: white; padding-left: 3%">
-                    RoBERTa is a masked language model meaning that it tries to guess what
-                    the next word in a sequence is. To use RoBERTa and get a response, the user
-                    must enter their input in a specific manner using the &lt;mask&gt; keyword.
-                    <br />For example:
-                    <strong>RoBERTa's favorite color is &lt;mask&gt;</strong>
-                </p>
-            </div>
-            <div class="box" style="margin-left: 5%; margin-right: 5%;">
-                <h4 style="color:white">Bit Error Injection</h4>
+                <h4>Bit Error Injection</h4>
                 <p style="font-size: 110%">
                     <em>Tensor Index</em> represents the index of the tensor you want to change. <br>
                     <em>Number of Bits</em> represents the number of bitflips to inject.
